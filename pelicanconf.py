@@ -3,8 +3,8 @@
 from __future__ import unicode_literals
 
 AUTHOR = u'Lucas Emanuel'
-SITENAME = u'Lucas Emanuel - Blog'
-SITEURL = ''
+SITENAME = u'lucasebs - blog'
+SITEURL = 'https://lucasebs.github.io'
 
 PATH = 'content'
 
@@ -33,3 +33,13 @@ DEFAULT_PAGINATION = 10
 
 # Uncomment following line if you want document-relative URLs when developing
 #RELATIVE_URLS = True
+
+THEME = 'themes/pelican-hyde'
+OUTPUT_PATH = 'output'
+PATH = 'content'
+
+ARTICLE_URL = 'posts/{date:%Y}/{date:%m}/{slug}/'
+ARTICLE_SAVE_AS = 'posts/{date:%Y}/{date:%m}/{slug}/index.html'
+
+
+PROFILE_IMAGE='profile_pic.jpg'
