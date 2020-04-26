@@ -14,6 +14,7 @@ DEFAULT_LANG = u'pt'
 
 # Feed generation is usually not desired when developing
 FEED_ALL_ATOM = None
+FEED_ALL_RSS = 'feeds/all.rss.xml'
 CATEGORY_FEED_ATOM = None
 TRANSLATION_FEED_ATOM = None
 AUTHOR_FEED_ATOM = None
@@ -28,8 +29,7 @@ LINKS = (('Pelican', 'http://getpelican.com/'),
 # Social widget
 # SOCIAL = (('You can add links in your config file', '#'),
 #           ('Another social link', '#'),)
-SOCIAL = (('email', 'lucasebatista@gmail.com'),
-        ('linkedin', 'https://br.linkedin.com/in/lucasemanuelbs/en'),
+SOCIAL = (('linkedin', 'https://br.linkedin.com/in/lucasemanuelbs/en'),
         ('github', 'https://github.com/lucasebs'))
 
 
@@ -52,3 +52,7 @@ ARTICLE_SAVE_AS = 'posts/{date:%Y}/{date:%m}/{slug}/index.html'
 
 BIO = "I'm Lucas Emanuel Batista dos Santos, from northeast Brazil. Working as Software Engineer. I love Python and programming"
 PROFILE_IMAGE='profile_pic.jpg'
+
+
+DISQUS_SITENAME = "lucasebs"
+GOOGLE_ANALYTICS = "UA-164660695-1"
