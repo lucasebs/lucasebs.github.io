@@ -278,7 +278,7 @@ a.sidebar-nav-item.active:focus {
 .theme-base-0f .sidebar {
   background-color: #282828;
 }
-.theme-base-0f .content a,
-.theme-base-0f .related-posts li a:hover {
+.theme-base-default-dark .content a,
+.theme-base-default-dark .related-posts li a:hover {
   color: #282828;
 }
