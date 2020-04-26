@@ -26,13 +26,22 @@ LINKS = (('Pelican', 'http://getpelican.com/'),
          ('You can modify those links in your config file', '#'),)
 
 # Social widget
-SOCIAL = (('You can add links in your config file', '#'),
-          ('Another social link', '#'),)
+# SOCIAL = (('You can add links in your config file', '#'),
+#           ('Another social link', '#'),)
+SOCIAL = (('email', 'lucasebatista@gmail.com'),
+        ('linkedin', 'https://br.linkedin.com/in/lucasemanuelbs/en'),
+        ('github', 'https://github.com/lucasebs'))
+
+
 
 DEFAULT_PAGINATION = 10
 
 # Uncomment following line if you want document-relative URLs when developing
 #RELATIVE_URLS = True
+
+
+STATIC_PATHS = ['images', 'extra/CNAME']
+EXTRA_PATH_METADATA = {'extra/CNAME': {'path': 'CNAME'},}
 
 THEME = 'themes/pelican-hyde'
 OUTPUT_PATH = 'output'
@@ -41,5 +50,5 @@ PATH = 'content'
 ARTICLE_URL = 'posts/{date:%Y}/{date:%m}/{slug}/'
 ARTICLE_SAVE_AS = 'posts/{date:%Y}/{date:%m}/{slug}/index.html'
 
-
+BIO = "I'm Lucas Emanuel Batista dos Santos, from northeast Brazil. Working as Software Engineer. I love Python and programming"
 PROFILE_IMAGE='profile_pic.jpg'
