@@ -1,0 +1,19 @@
+.about-div {
+    display: flex;
+}
+
+.about-div .about-div-pictures {
+    width: 50%;
+}
+
+.about-div .about-div-pictures p{
+    text-align: center;
+    font-size: 16px;
+}
+
+.about-picture {
+    margin: 0 auto;
+    border-radius: 50%;
+    border: 3px solid #dc9656;
+    max-width: 8rem;
+}

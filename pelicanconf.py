@@ -50,9 +50,9 @@ PATH = 'content'
 ARTICLE_URL = 'posts/{date:%Y}/{date:%m}/{slug}/'
 ARTICLE_SAVE_AS = 'posts/{date:%Y}/{date:%m}/{slug}/index.html'
 
-BIO = "I'm Lucas Emanuel Batista dos Santos, from northeast Brazil. Working as Software Engineer. I love Python and programming"
+BIO = "I'm Lucas Emanuel Batista dos Santos, from northeast Brazil. Working as Software Analyst. I love Python and programming"
 PROFILE_IMAGE='profile_pic.jpg'
-
+PROFILE_IMAGE_WHITOUT_HAIR='profile_pic_without_hair.jpg'
 
 DISQUS_SITENAME = "lucasebs"
 GOOGLE_ANALYTICS = "UA-164660695-1"
