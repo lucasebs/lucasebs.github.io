@@ -36,6 +36,8 @@ SOCIAL = (('linkedin', 'https://br.linkedin.com/in/lucasemanuelbs/en'),
 
 DEFAULT_PAGINATION = 10
 
+READERS = {"html": None}
+
 # Uncomment following line if you want document-relative URLs when developing
 #RELATIVE_URLS = True
 
