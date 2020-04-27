@@ -40,7 +40,7 @@ DEFAULT_PAGINATION = 10
 #RELATIVE_URLS = True
 
 
-STATIC_PATHS = ['images', 'extra/CNAME']
+STATIC_PATHS = ['images', 'extra' ,'extra/CNAME']
 EXTRA_PATH_METADATA = {'extra/CNAME': {'path': 'CNAME'},}
 
 THEME = 'themes/pelican-hyde'
