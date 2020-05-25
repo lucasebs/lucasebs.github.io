@@ -54,7 +54,7 @@
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;h4&gt;Em 2 linhas de código!!!!&lt;/h4&gt;
+&lt;h3&gt;Em 2 linhas de código!!!!&lt;/h3&gt;
 &lt;p&gt;Caso não queira ter nenhum trabalho, basta utilizar a biblioteca pandas.&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;Para saber mais sobre a biblioteca pandas acesse: &lt;a href="https://pandas.pydata.org/"&gt;https://pandas.pydata.org/&lt;/a&gt;&lt;/p&gt;
@@ -65,7 +65,7 @@
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;p&gt;A primeira linha importa a biblioteca, a segunda,lê o json a partir do arquivo &lt;code&gt;file_json.json&lt;/code&gt; e transforma os dados lidos escrevendo no arquivo &lt;code&gt;file_name.csv&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;A primeira linha importa a biblioteca, a segunda,lê o json a partir do arquivo &lt;code&gt;file_name.json&lt;/code&gt; e transforma os dados lidos escrevendo no arquivo &lt;code&gt;file_name.csv&lt;/code&gt;&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;h5&gt;Nota!&lt;/h5&gt;
 &lt;p&gt;Dados em Json podem estar formatados de maneiras diferentes. Para conseguir ler cada uma dessas maneiras recomendo &lt;a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.read_json.html"&gt;acessar a documentação específica da função &lt;code&gt;read_json()&lt;/code&gt; do pandas&lt;/a&gt;&lt;/p&gt;
