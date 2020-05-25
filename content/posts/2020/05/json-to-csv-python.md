@@ -1,4 +1,4 @@
-Title: Transformar dados json em arquivo CSV
+Title: Transformar json em arquivo CSV com Python
 Slug: json-to-csv-python
 Date: 2020-05-25 00:28
 Category: python
