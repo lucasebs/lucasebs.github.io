@@ -10,10 +10,13 @@ Fala pessoal! Decidi começar minha página aqui no github com um blog(bem como 
 
 Se um dia foi usual pra mim, creio que também poderá ser para alguém.
 
-## Sobre esse blog
+### Sobre esse blog
 
 A ideia surgiu a partir do meu dia-a-dia em meu trabalho, onde diversas vezes me peguei fazendo comentários como: "-Essa funcionalidade na linguagem X eu não sei, mas se fosse em Python resolvia em 5 linhas", então, por qual motivo não deixar registrado pra caso alguém precise?
 
 Essa página não nasceu pra ser "a luz, a verdade e a vida", onde tudo é diferenciado. Muitas coisas poderão ser encontradas facilmente pelo restante da internet(como quase tudo), mas quem sabe aqui não seja um caminho de referência fácil? 
 
 Então vem, puxa a cadeira e senta no chão, que se eu achar alguma forma fácil de implementar algo, virá parar aqui.
+
+
+Qualquer coisa. Chama no comentário aqui embaixo! (Ou reage feliz com amorzinho! <3)
