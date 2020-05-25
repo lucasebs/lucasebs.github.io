@@ -1,5 +1,5 @@
 Title: Transformar Json em CSV
-Slug: apresentacao
+Slug: json-to-csv-python
 Date: 2020-05-25 00:28
 Category: python
 Tags: python, pandas, json, csv
