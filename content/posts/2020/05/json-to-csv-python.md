@@ -73,7 +73,7 @@ for row in json_data:
 file_csv.close()
 ```
 
-#### Em 2 linhas de código!!!!
+### Em 2 linhas de código!!!!
 
 Caso não queira ter nenhum trabalho, basta utilizar a biblioteca pandas.
 
@@ -89,7 +89,7 @@ import pandas as pd
 pd.read_json (r'file_name.json').to_csv (r'file_name.csv', index = None)
 ```
 
-A primeira linha importa a biblioteca, a segunda,lê o json a partir do arquivo `file_json.json` e transforma os dados lidos escrevendo no arquivo `file_name.csv`
+A primeira linha importa a biblioteca, a segunda,lê o json a partir do arquivo `file_name.json` e transforma os dados lidos escrevendo no arquivo `file_name.csv`
 
 
 > ##### Nota! 
