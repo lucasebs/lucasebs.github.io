@@ -4,7 +4,7 @@ Date: 2020-05-24 21:00
 Category: about
 Tags: me
 Author: Lucas Emanuel
-Summary: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce euismod, mi id feugiat ultricies, diam lorem malesuada massa, at sagittis diam urna efficitur leo. Nulla luctus eros sit amet massa tempor, nec euismod purus ornare. Integer odio neque, dignissim vel lorem vel, hendrerit posuere arcu. 
+Summary: Fala pessoal! Decidi começar minha página aqui no github com um blog(bem como várias pessoas, mas vida que segue). Vou disponibilizar conteúdo e dicas sobre o uso de tecnologias que gosto e domino(talvez nem tanto). Se um dia foi usual pra mim, creio que também poderá ser para alguém.
 
 Fala pessoal! Decidi começar minha página aqui no github com um blog(bem como várias pessoas, mas vida que segue). Vou disponibilizar conteúdo e dicas sobre o uso de tecnologias que gosto e domino(talvez nem tanto).
 
