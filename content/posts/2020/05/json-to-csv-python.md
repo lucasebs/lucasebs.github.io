@@ -4,13 +4,13 @@ Date: 2020-05-25 00:28
 Category: python
 Tags: python, pandas, json, csv
 Author: Lucas Emanuel
-Summary: Pra começar, já no primeiro post, segue a(s) resposta(s) da seguinte pergunta: "Como salvar um json em um arquivo csv?".
+Summary: Pra começar, já no primeiro post, segue a(s) resposta(s) da seguinte pergunta: **"Como salvar um json em um arquivo csv?"**
 
 Pra começar, já no primeiro post, logo com a resposta da seguinte pergunta: **"Como é que eu faço pra salvar um json em um arquivo csv?"**
 
 No contexto dessa pergunta seria para aplicar em Node.js (o que eu realmente nunca tinha feito), mas em Python eu sabia bem como fazer. E basicamente vou dividir em duas maneira: Profissional e Estudante(fica até o final que vai dar bom!).
 
-### Maneira 1 - Profissional
+## Maneira 1 - Profissional
 
 A maneira profissional é como você utilizará pra solucionar um problema rápido, afim de obter o resultado da melhor maneira possível e isso requer bem menos recursos e lógicas
 
@@ -96,7 +96,7 @@ A primeira linha importa a biblioteca, a segunda,lê o json a partir do arquivo 
 Dados em Json podem estar formatados de maneiras diferentes. Para conseguir ler cada uma dessas maneiras recomendo [acessar a documentação específica da função `read_json()` do pandas](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.read_json.html)
 
 
-### Maneira 2 - Estudante 
+## Maneira 2 - Estudante 
 
 Chamei esta maneira como "Estudante" devido a alguns momentos enquanto estudantes em que é preciso compreender como as coisas funcionam e como seriam implementadas(E talvez você até precise implementar), então se for este o caso, segue aí e 'vamo ser feliz'!
 
