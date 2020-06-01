@@ -69,12 +69,14 @@
 	<p>Prosseguindo com as dicas em Python, esse post vem responder ao questionamento: <strong>"Da pra utilizar argumentos via bash em um script python?"</strong>. Adianto que: Sim! Então, vem comigo até o fim!</p>
 <p>Aprender a executar um script/aplicação através de um bash(terminal, cmd, powershell), utilizando argumentos como entrada é uma das coisas mais funcionais a serem aprendidas na vida de quem desenvolve.</p>
 <p>Geralmente, durante a vida acadêmica, poucas vezes isso nos é demonstrado e muito menos nos é dito todo o seu pontencial de uso. </p>
-<p>E, em poucos exemplos, através desse modo de execução pode-se fazer coisas como:
-  - Agendar/Automatizar uma execução
-  - Realizar execuções condicionais
-  - Utilizar outros scripts para 'disparar' uma execução
-  - E por aí vai... </p>
-<p>Cabe você descobrir pra que precisa e como aplicar.</p>
+<p>E, em poucos exemplos, através desse modo de execução pode-se fazer coisas como:</p>
+<ul>
+<li>Agendar/Automatizar uma execução</li>
+<li>Realizar execuções condicionais</li>
+<li>Utilizar outros scripts para 'disparar' uma execução</li>
+<li>E por aí vai... </li>
+</ul>
+<p>Cabe a você descobrir pra que precisa e como aplicar.</p>
 <p>Vamos lá, vou lhe mostrar utilizando como exemplo o código que geramos no post sobre como <a href="https://lucasebs.github.io/posts/2020/05/json-to-csv-python/">Transformar json em arquivo CSV com Python</a> (se não leu, se ligue!):</p>
 <div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">csv</span><span class="o">,</span> <span class="nn">json</span>
 
@@ -94,7 +96,7 @@
 
 <p>Vamos chamá-lo de <code>script_feliz_transforma_json_em_csv.py</code>!</p>
 <hr>
-<h2>Está começando a desenvolve a pouco tempo?</h2>
+<h2>Está começando a desenvolver a pouco tempo?</h2>
 <blockquote>
 <h5>Nota!</h5>
 <p>Caso esteja apenas buscando como fazer, segue que mais embaixo já tem mostrando como. </p>
@@ -111,7 +113,7 @@
 <li>Agora, imagine abrir o <code>script_feliz_transforma_json_em_csv.py</code> a cada arquivo e alterar o nome do arquivo de entrada e saída para cada caso. Não seria tão legal, né?</li>
 </ul>
 <p>E se você pudesse, ainda na execução, 'informar' ao seu script o arquivo a ser tranformado, além do nome do arquivo csv gerado?  </p>
-<p>Seria bem mais rápido que ter que mudar dentro do script, né?</p>
+<p>Seria bem mais rápido do que ter que mudar dentro do script, né?</p>
 <p>Pois bem, isso seria passar os nome dos arquivos como argumentos para seu script e seria mais ou menos assim:</p>
 <div class="highlight"><pre><span></span>$ python script_feliz_transforma_json_em_csv.py file.json file.csv
 </pre></div>
@@ -119,7 +121,7 @@
 
 <p>Agora segue, que vou ensinar como fazer isso ligeirinho!</p>
 <hr>
-<h2>Como fazer isso?</h2>
+<h2>Como fazer isso e tal?</h2>
 <p>Utilizaremos apenas uma biblioteca python, <code>sys</code>.</p>
 <div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sys</span>
 </pre></div>
@@ -202,13 +204,13 @@
 <p>E é só isso mesmo, de verdade! </p>
 <blockquote>
 <h5>Nota!</h5>
-<p>Maioria das demais linguagens de programação fazem uso desta mesma funcionalidade. Basta também pesquisar como fazer e ser feliz.</p>
+<p>Maioria das linguagens de programação fazem uso desta mesma funcionalidade. Basta também pesquisar como fazer e ser feliz.</p>
 </blockquote>
-<p>Pronto, agora e explorar as formas de como utilizar da maneira que for mais funcional para as suas necessidades! </p>
+<p>Pronto, agora é explorar as formas de como utilizar da maneira que for mais funcional para as suas necessidades! </p>
 <p>Xero no coração!</p>
 <hr>
 <h3>Aviso</h3>
-<p>Essa página não nasceu pra ser "a luz, a verdade e a vida", onde tudo é diferenciado, muitas coisas poderão ser encontradas facilmente pelo restante da internet(como quase tudo), mas quem sabe aqui não seja um caminho de referência fácil? </p>
+<p>Essa página não nasceu pra ser "a luz, a verdade e a vida", onde tudo é diferenciado, muitas coisas poderão ser encontradas facilmente pelo restante da internet (como quase tudo), mas quem sabe aqui não seja um caminho de referência fácil?! </p>
 <h4>Gostou? Tá com dúvida?</h4>
 <p>Chama no comentário aqui embaixo! (Ou reage feliz com amorzinho! &lt;3)</p>
 	<div id="disqus_thread"></div>
