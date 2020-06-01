@@ -178,7 +178,7 @@ Xero no coração!
 
 ### Aviso
 
-Essa página não nasceu pra ser "a luz, a verdade e a vida", onde tudo é diferenciado, muitas coisas poderão ser encontradas facilmente pelo restante da internet (como quase tudo), mas quem sabe aqui não seja um caminho de referência fácil? 
+Essa página não nasceu pra ser "a luz, a verdade e a vida", onde tudo é diferenciado, muitas coisas poderão ser encontradas facilmente pelo restante da internet (como quase tudo), mas quem sabe aqui não seja um caminho de referência fácil?! 
 
 
 #### Gostou? Tá com dúvida?
