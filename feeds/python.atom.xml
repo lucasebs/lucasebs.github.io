@@ -1,5 +1,149 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>lucasebs - python</title><link href="https://lucasebs.github.io/" rel="alternate"></link><link href="https://lucasebs.github.io/feeds/python.atom.xml" rel="self"></link><id>https://lucasebs.github.io/</id><updated>2020-05-25T00:28:00-03:00</updated><entry><title>Transformar json em arquivo CSV com Python</title><link href="https://lucasebs.github.io/posts/2020/05/json-to-csv-python/" rel="alternate"></link><published>2020-05-25T00:28:00-03:00</published><updated>2020-05-25T00:28:00-03:00</updated><author><name>Lucas Emanuel</name></author><id>tag:lucasebs.github.io,2020-05-25:/posts/2020/05/json-to-csv-python/</id><summary type="html">&lt;p&gt;Pra começar, já no primeiro post, segue a(s) resposta(s) da seguinte pergunta: &lt;strong&gt;"Como salvar um json em um arquivo csv?"&lt;/strong&gt;&lt;/p&gt;</summary><content type="html">&lt;p&gt;Pra começar, já no primeiro post, logo com a resposta da seguinte pergunta: &lt;strong&gt;"Como é que eu faço pra salvar um json em um arquivo csv?"&lt;/strong&gt;&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>lucasebs - python</title><link href="https://lucasebs.github.io/" rel="alternate"></link><link href="https://lucasebs.github.io/feeds/python.atom.xml" rel="self"></link><id>https://lucasebs.github.io/</id><updated>2020-05-31T22:35:00-03:00</updated><entry><title>Como utilizar argumentos via bash em um script python</title><link href="https://lucasebs.github.io/posts/2020/05/utilizar-argumentos-script-python/" rel="alternate"></link><published>2020-05-31T22:35:00-03:00</published><updated>2020-05-31T22:35:00-03:00</updated><author><name>Lucas Emanuel</name></author><id>tag:lucasebs.github.io,2020-05-31:/posts/2020/05/utilizar-argumentos-script-python/</id><summary type="html">&lt;p&gt;Prosseguindo com as dicas em Python, esse post vem responder: &lt;strong&gt;"Da pra utilizar argumentos via bash em um script python?"&lt;/strong&gt;&lt;/p&gt;</summary><content type="html">&lt;p&gt;Prosseguindo com as dicas em Python, esse post vem responder ao questionamento: &lt;strong&gt;"Da pra utilizar argumentos via bash em um script python?"&lt;/strong&gt;. Adianto que: Sim! Então, vem comigo até o fim!&lt;/p&gt;
+&lt;p&gt;Aprender a executar um script/aplicação através de um bash(terminal, cmd, powershell), utilizando argumentos como entrada é uma das coisas mais funcionais a serem aprendidas na vida de quem desenvolve.&lt;/p&gt;
+&lt;p&gt;Geralmente, durante a vida acadêmica, poucas vezes isso nos é demonstrado e muito menos nos é dito todo o seu pontencial de uso. &lt;/p&gt;
+&lt;p&gt;E, em poucos exemplos, através desse modo de execução pode-se fazer coisas como:
+  - Agendar/Automatizar uma execução
+  - Realizar execuções condicionais
+  - Utilizar outros scripts para 'disparar' uma execução
+  - E por aí vai... &lt;/p&gt;
+&lt;p&gt;Cabe você descobrir pra que precisa e como aplicar.&lt;/p&gt;
+&lt;p&gt;Vamos lá, vou lhe mostrar utilizando como exemplo o código que geramos no post sobre como &lt;a href="https://lucasebs.github.io/posts/2020/05/json-to-csv-python/"&gt;Transformar json em arquivo CSV com Python&lt;/a&gt; (se não leu, se ligue!):&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;csv&lt;/span&gt;&lt;span class="o"&gt;,&lt;/span&gt; &lt;span class="nn"&gt;json&lt;/span&gt;
+
+&lt;span class="n"&gt;file_json&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nb"&gt;open&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;file_name.json&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="n"&gt;json_data&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;json&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;load&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;file_json&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="n"&gt;file_json&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;close&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+
+&lt;span class="n"&gt;file_csv&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nb"&gt;open&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;file_name.csv&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;w&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="n"&gt;output_csv&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;csv&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;writer&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;file_csv&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="n"&gt;output_csv&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;writerow&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;json_data&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;keys&lt;/span&gt;&lt;span class="p"&gt;())&lt;/span&gt;
+
+&lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;row&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="n"&gt;json_data&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+    &lt;span class="n"&gt;output_csv&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;writerow&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;row&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;values&lt;/span&gt;&lt;span class="p"&gt;())&lt;/span&gt;
+&lt;span class="n"&gt;file_csv&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;close&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Vamos chamá-lo de &lt;code&gt;script_feliz_transforma_json_em_csv.py&lt;/code&gt;!&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2&gt;Está começando a desenvolve a pouco tempo?&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;h5&gt;Nota!&lt;/h5&gt;
+&lt;p&gt;Caso esteja apenas buscando como fazer, segue que mais embaixo já tem mostrando como. &lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;strong&gt;Mas...&lt;/strong&gt; Se você desenvolve a pouco tempo e/ou nunca explorou esse mundo de argumentos, lhe explico.&lt;/p&gt;
+&lt;p&gt;Bem, se fossemos executar nosso script via bash utilizaríamos:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;$ python script_feliz_transforma_json_em_csv.py
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Até então tudo ok! Mas qual seria o problema disso? &lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Imagine que tivesse diversos arquivos para transformar de json para csv. &lt;/li&gt;
+&lt;li&gt;Agora, imagine abrir o &lt;code&gt;script_feliz_transforma_json_em_csv.py&lt;/code&gt; a cada arquivo e alterar o nome do arquivo de entrada e saída para cada caso. Não seria tão legal, né?&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;E se você pudesse, ainda na execução, 'informar' ao seu script o arquivo a ser tranformado, além do nome do arquivo csv gerado?  &lt;/p&gt;
+&lt;p&gt;Seria bem mais rápido que ter que mudar dentro do script, né?&lt;/p&gt;
+&lt;p&gt;Pois bem, isso seria passar os nome dos arquivos como argumentos para seu script e seria mais ou menos assim:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;$ python script_feliz_transforma_json_em_csv.py file.json file.csv
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Agora segue, que vou ensinar como fazer isso ligeirinho!&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2&gt;Como fazer isso?&lt;/h2&gt;
+&lt;p&gt;Utilizaremos apenas uma biblioteca python, &lt;code&gt;sys&lt;/code&gt;.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;sys&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Show! Tudo o que é passado como argumento para um script python ficará registrado em uma lista ~~python~~ que pode ser acessada em &lt;code&gt;sys.argv&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;Por exemplo, se tivéssemos o seguinte script &lt;code&gt;argumentos.py&lt;/code&gt;:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;sys&lt;/span&gt;
+
+&lt;span class="nb"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;sys&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;argv&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;E executássemos passando os seguintes argumentos:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;$ python argumentos.py oi lindos &lt;span class="k"&gt;do&lt;/span&gt; meu coracao
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Teríamos como saída:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="err"&gt;[&amp;#39;oi&amp;#39;, &amp;#39;lindos&amp;#39;, &amp;#39;do&amp;#39;, &amp;#39;meu&amp;#39;, &amp;#39;coracao&amp;#39;]&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Sabendo disso, poderíamos acessar qualquer elemento como acessamos os elementos de qualquer lista em python. Onde, no exemplo acima poderíamos utilizar:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="nb"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;sys&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;argv&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;],&lt;/span&gt; &lt;span class="n"&gt;sys&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;argv&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;4&lt;/span&gt;&lt;span class="p"&gt;])&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Para obter:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="err"&gt;oi coração&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Assim, em nosso &lt;code&gt;script_feliz_transforma_json_em_csv.py&lt;/code&gt;, teríamos de, inicialmente, importar a biblioteca &lt;code&gt;sys&lt;/code&gt;&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;sys&lt;/span&gt;&lt;span class="o"&gt;,&lt;/span&gt; &lt;span class="nn"&gt;csv&lt;/span&gt;&lt;span class="o"&gt;,&lt;/span&gt; &lt;span class="nn"&gt;json&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;E alterar onde iríamos receber cada argumento no nosso script, considerando que:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;O primeiro argumento recebido seria o arquivo json&lt;/li&gt;
+&lt;li&gt;O segundo argumento seria o arquivo de saída, transformado para csv&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Então teríamos de incluir o argumento para o nosso arquivo json, o primeiro argumento:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;file_json&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nb"&gt;open&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;sys&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;argv&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;])&lt;/span&gt;
+&lt;span class="n"&gt;json_data&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;json&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;load&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;file_json&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="n"&gt;file_json&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;close&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;E também o nosso arquivo csv de saída, o segundo argumento:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;file_csv&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nb"&gt;open&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;sys&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;argv&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;],&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;w&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="n"&gt;output_csv&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;csv&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;writer&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;file_csv&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;&lt;strong&gt;E só!&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Por fim, teremos nosso script &lt;code&gt;script_feliz_transforma_json_em_csv.py&lt;/code&gt;:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;sys&lt;/span&gt;&lt;span class="o"&gt;,&lt;/span&gt; &lt;span class="nn"&gt;csv&lt;/span&gt;&lt;span class="o"&gt;,&lt;/span&gt; &lt;span class="nn"&gt;json&lt;/span&gt;
+
+&lt;span class="n"&gt;file_json&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nb"&gt;open&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;sys&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;argv&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;])&lt;/span&gt;
+&lt;span class="n"&gt;json_data&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;json&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;load&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;file_json&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="n"&gt;file_json&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;close&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+
+&lt;span class="n"&gt;file_csv&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nb"&gt;open&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;sys&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;argv&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;],&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;w&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="n"&gt;output_csv&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;csv&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;writer&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;file_csv&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="n"&gt;output_csv&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;writerow&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;json_data&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;keys&lt;/span&gt;&lt;span class="p"&gt;())&lt;/span&gt;
+
+&lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;row&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="n"&gt;json_data&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+    &lt;span class="n"&gt;output_csv&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;writerow&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;row&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;values&lt;/span&gt;&lt;span class="p"&gt;())&lt;/span&gt;
+&lt;span class="n"&gt;file_csv&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;close&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;E, assim, podemos executá-lo:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;$ python script_feliz_transforma_json_em_csv.py file_entrada.json file_saida.csv
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;E é só isso mesmo, de verdade! &lt;/p&gt;
+&lt;blockquote&gt;
+&lt;h5&gt;Nota!&lt;/h5&gt;
+&lt;p&gt;Maioria das demais linguagens de programação fazem uso desta mesma funcionalidade. Basta também pesquisar como fazer e ser feliz.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Pronto, agora e explorar as formas de como utilizar da maneira que for mais funcional para as suas necessidades! &lt;/p&gt;
+&lt;p&gt;Xero no coração!&lt;/p&gt;
+&lt;hr&gt;
+&lt;h3&gt;Aviso&lt;/h3&gt;
+&lt;p&gt;Essa página não nasceu pra ser "a luz, a verdade e a vida", onde tudo é diferenciado, muitas coisas poderão ser encontradas facilmente pelo restante da internet(como quase tudo), mas quem sabe aqui não seja um caminho de referência fácil? &lt;/p&gt;
+&lt;h4&gt;Gostou? Tá com dúvida?&lt;/h4&gt;
+&lt;p&gt;Chama no comentário aqui embaixo! (Ou reage feliz com amorzinho! &amp;lt;3)&lt;/p&gt;</content><category term="python"></category><category term="python"></category><category term="script"></category><category term="parser"></category></entry><entry><title>Transformar json em arquivo CSV com Python</title><link href="https://lucasebs.github.io/posts/2020/05/json-to-csv-python/" rel="alternate"></link><published>2020-05-25T00:28:00-03:00</published><updated>2020-05-25T00:28:00-03:00</updated><author><name>Lucas Emanuel</name></author><id>tag:lucasebs.github.io,2020-05-25:/posts/2020/05/json-to-csv-python/</id><summary type="html">&lt;p&gt;Pra começar, já no primeiro post, segue a(s) resposta(s) da seguinte pergunta: &lt;strong&gt;"Como salvar um json em um arquivo csv?"&lt;/strong&gt;&lt;/p&gt;</summary><content type="html">&lt;p&gt;Pra começar, já no primeiro post, logo com a resposta da seguinte pergunta: &lt;strong&gt;"Como é que eu faço pra salvar um json em um arquivo csv?"&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;No contexto dessa pergunta seria para aplicar em Node.js (o que eu realmente nunca tinha feito), mas em Python eu sabia bem como fazer. E basicamente vou dividir em duas maneira: Profissional e Estudante(fica até o final que vai dar bom!).&lt;/p&gt;
 &lt;h2&gt;Maneira 1 - Profissional&lt;/h2&gt;
 &lt;p&gt;A maneira profissional é como você utilizará pra solucionar um problema rápido, afim de obter o resultado da melhor maneira possível e isso requer bem menos recursos e lógicas&lt;/p&gt;

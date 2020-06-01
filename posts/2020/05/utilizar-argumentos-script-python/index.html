@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="pt">
+	<head>
+		<link href="http://gmpg.org/xfn/11" rel="profile">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+		<!-- Enable responsiveness on mobile devices-->
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+		<title>lucasebs</title>
+
+		<!-- CSS -->
+		<link href="//fonts.googleapis.com/" rel="dns-prefetch">
+		<link href="//fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic|Abril+Fatface|PT+Sans:400,400italic,700&amp;subset=latin,latin-ext" rel="stylesheet">
+
+		<link rel="stylesheet" href="https://lucasebs.github.io/theme/css/style.css" />
+		<link rel="stylesheet" href="https://lucasebs.github.io/theme/css/poole.css" />
+		<link rel="stylesheet" href="https://lucasebs.github.io/theme/css/hyde.css" />
+		<link rel="stylesheet" href="https://lucasebs.github.io/theme/css/syntax.css" />
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+
+		<!-- RSS -->
+		<link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml">
+	<script type="text/javascript">
+		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+ 			(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+ 			m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+ 			})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+			ga('create', 'UA-164660695-1', 'auto');
+			ga('send', 'pageview');
+	</script>
+	</head>
+
+	<body class="theme-base-default-dark">
+<div class="sidebar">
+	<div class="container sidebar-sticky">
+		<div class="sidebar-about">
+
+			<h1>
+				<a href="/">
+					<img class="profile-picture" src="https://lucasebs.github.io/images/profile_pic.jpg">
+					lucasebs
+				</a>
+			</h1>
+			<p class="lead"></p>
+			<p class="lead"><a href="https://lucasebs.github.io/extra/about.html">I'm Lucas Emanuel Batista dos Santos, from northeast Brazil. Working as Software Analyst. I love Python and programming</a></p>
+			<p></p>
+		</div>
+		<nav class="sidebar-nav">
+			<a class="sidebar-nav-item" href="mailto:lucasebatista@gmail.com">
+				<i class="fa fa-envelope"></i>
+			</a>
+			<a class="sidebar-nav-item" href="https://br.linkedin.com/in/lucasemanuelbs/en">
+				<i class="fa fa-linkedin"></i>
+			</a>
+			<a class="sidebar-nav-item" href="https://github.com/lucasebs">
+				<i class="fa fa-github"></i>
+			</a>
+			<a class="sidebar-nav-item" href="feeds/all.rss.xml">
+				<i class="fa fa-feed"></i>
+			</a>
+		</nav>
+	</div>
+</div>		<div class="content container">
+<div class="post">
+	<h1 class="post-title">Como utilizar argumentos via bash em um script python</h1>
+	<span class="post-date">dom 31 maio 2020</span>
+	<p>Prosseguindo com as dicas em Python, esse post vem responder ao questionamento: <strong>"Da pra utilizar argumentos via bash em um script python?"</strong>. Adianto que: Sim! Então, vem comigo até o fim!</p>
+<p>Aprender a executar um script/aplicação através de um bash(terminal, cmd, powershell), utilizando argumentos como entrada é uma das coisas mais funcionais a serem aprendidas na vida de quem desenvolve.</p>
+<p>Geralmente, durante a vida acadêmica, poucas vezes isso nos é demonstrado e muito menos nos é dito todo o seu pontencial de uso. </p>
+<p>E, em poucos exemplos, através desse modo de execução pode-se fazer coisas como:
+  - Agendar/Automatizar uma execução
+  - Realizar execuções condicionais
+  - Utilizar outros scripts para 'disparar' uma execução
+  - E por aí vai... </p>
+<p>Cabe você descobrir pra que precisa e como aplicar.</p>
+<p>Vamos lá, vou lhe mostrar utilizando como exemplo o código que geramos no post sobre como <a href="https://lucasebs.github.io/posts/2020/05/json-to-csv-python/">Transformar json em arquivo CSV com Python</a> (se não leu, se ligue!):</p>
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">csv</span><span class="o">,</span> <span class="nn">json</span>
+
+<span class="n">file_json</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;file_name.json&#39;</span><span class="p">)</span>
+<span class="n">json_data</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">file_json</span><span class="p">)</span>
+<span class="n">file_json</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+
+<span class="n">file_csv</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;file_name.csv&#39;</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span>
+<span class="n">output_csv</span> <span class="o">=</span> <span class="n">csv</span><span class="o">.</span><span class="n">writer</span><span class="p">(</span><span class="n">file_csv</span><span class="p">)</span>
+<span class="n">output_csv</span><span class="o">.</span><span class="n">writerow</span><span class="p">(</span><span class="n">json_data</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span>
+
+<span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">json_data</span><span class="p">:</span>
+    <span class="n">output_csv</span><span class="o">.</span><span class="n">writerow</span><span class="p">(</span><span class="n">row</span><span class="o">.</span><span class="n">values</span><span class="p">())</span>
+<span class="n">file_csv</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</pre></div>
+
+
+<p>Vamos chamá-lo de <code>script_feliz_transforma_json_em_csv.py</code>!</p>
+<hr>
+<h2>Está começando a desenvolve a pouco tempo?</h2>
+<blockquote>
+<h5>Nota!</h5>
+<p>Caso esteja apenas buscando como fazer, segue que mais embaixo já tem mostrando como. </p>
+</blockquote>
+<p><strong>Mas...</strong> Se você desenvolve a pouco tempo e/ou nunca explorou esse mundo de argumentos, lhe explico.</p>
+<p>Bem, se fossemos executar nosso script via bash utilizaríamos:</p>
+<div class="highlight"><pre><span></span>$ python script_feliz_transforma_json_em_csv.py
+</pre></div>
+
+
+<p>Até então tudo ok! Mas qual seria o problema disso? </p>
+<ul>
+<li>Imagine que tivesse diversos arquivos para transformar de json para csv. </li>
+<li>Agora, imagine abrir o <code>script_feliz_transforma_json_em_csv.py</code> a cada arquivo e alterar o nome do arquivo de entrada e saída para cada caso. Não seria tão legal, né?</li>
+</ul>
+<p>E se você pudesse, ainda na execução, 'informar' ao seu script o arquivo a ser tranformado, além do nome do arquivo csv gerado?  </p>
+<p>Seria bem mais rápido que ter que mudar dentro do script, né?</p>
+<p>Pois bem, isso seria passar os nome dos arquivos como argumentos para seu script e seria mais ou menos assim:</p>
+<div class="highlight"><pre><span></span>$ python script_feliz_transforma_json_em_csv.py file.json file.csv
+</pre></div>
+
+
+<p>Agora segue, que vou ensinar como fazer isso ligeirinho!</p>
+<hr>
+<h2>Como fazer isso?</h2>
+<p>Utilizaremos apenas uma biblioteca python, <code>sys</code>.</p>
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sys</span>
+</pre></div>
+
+
+<p>Show! Tudo o que é passado como argumento para um script python ficará registrado em uma lista ~~python~~ que pode ser acessada em <code>sys.argv</code></p>
+<p>Por exemplo, se tivéssemos o seguinte script <code>argumentos.py</code>:</p>
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sys</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">)</span>
+</pre></div>
+
+
+<p>E executássemos passando os seguintes argumentos:</p>
+<div class="highlight"><pre><span></span>$ python argumentos.py oi lindos <span class="k">do</span> meu coracao
+</pre></div>
+
+
+<p>Teríamos como saída:</p>
+<div class="highlight"><pre><span></span><span class="err">[&#39;oi&#39;, &#39;lindos&#39;, &#39;do&#39;, &#39;meu&#39;, &#39;coracao&#39;]</span>
+</pre></div>
+
+
+<p>Sabendo disso, poderíamos acessar qualquer elemento como acessamos os elementos de qualquer lista em python. Onde, no exemplo acima poderíamos utilizar:</p>
+<div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">[</span><span class="mi">4</span><span class="p">])</span>
+</pre></div>
+
+
+<p>Para obter:</p>
+<div class="highlight"><pre><span></span><span class="err">oi coração</span>
+</pre></div>
+
+
+<p>Assim, em nosso <code>script_feliz_transforma_json_em_csv.py</code>, teríamos de, inicialmente, importar a biblioteca <code>sys</code></p>
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sys</span><span class="o">,</span> <span class="nn">csv</span><span class="o">,</span> <span class="nn">json</span>
+</pre></div>
+
+
+<p>E alterar onde iríamos receber cada argumento no nosso script, considerando que:</p>
+<ol>
+<li>O primeiro argumento recebido seria o arquivo json</li>
+<li>O segundo argumento seria o arquivo de saída, transformado para csv</li>
+</ol>
+<p>Então teríamos de incluir o argumento para o nosso arquivo json, o primeiro argumento:</p>
+<div class="highlight"><pre><span></span><span class="n">file_json</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<span class="n">json_data</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">file_json</span><span class="p">)</span>
+<span class="n">file_json</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</pre></div>
+
+
+<p>E também o nosso arquivo csv de saída, o segundo argumento:</p>
+<div class="highlight"><pre><span></span><span class="n">file_csv</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span>
+<span class="n">output_csv</span> <span class="o">=</span> <span class="n">csv</span><span class="o">.</span><span class="n">writer</span><span class="p">(</span><span class="n">file_csv</span><span class="p">)</span>
+</pre></div>
+
+
+<p><strong>E só!</strong></p>
+<p>Por fim, teremos nosso script <code>script_feliz_transforma_json_em_csv.py</code>:</p>
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sys</span><span class="o">,</span> <span class="nn">csv</span><span class="o">,</span> <span class="nn">json</span>
+
+<span class="n">file_json</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<span class="n">json_data</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">file_json</span><span class="p">)</span>
+<span class="n">file_json</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+
+<span class="n">file_csv</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span>
+<span class="n">output_csv</span> <span class="o">=</span> <span class="n">csv</span><span class="o">.</span><span class="n">writer</span><span class="p">(</span><span class="n">file_csv</span><span class="p">)</span>
+<span class="n">output_csv</span><span class="o">.</span><span class="n">writerow</span><span class="p">(</span><span class="n">json_data</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span>
+
+<span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">json_data</span><span class="p">:</span>
+    <span class="n">output_csv</span><span class="o">.</span><span class="n">writerow</span><span class="p">(</span><span class="n">row</span><span class="o">.</span><span class="n">values</span><span class="p">())</span>
+<span class="n">file_csv</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</pre></div>
+
+
+<p>E, assim, podemos executá-lo:</p>
+<div class="highlight"><pre><span></span>$ python script_feliz_transforma_json_em_csv.py file_entrada.json file_saida.csv
+</pre></div>
+
+
+<p>E é só isso mesmo, de verdade! </p>
+<blockquote>
+<h5>Nota!</h5>
+<p>Maioria das demais linguagens de programação fazem uso desta mesma funcionalidade. Basta também pesquisar como fazer e ser feliz.</p>
+</blockquote>
+<p>Pronto, agora e explorar as formas de como utilizar da maneira que for mais funcional para as suas necessidades! </p>
+<p>Xero no coração!</p>
+<hr>
+<h3>Aviso</h3>
+<p>Essa página não nasceu pra ser "a luz, a verdade e a vida", onde tudo é diferenciado, muitas coisas poderão ser encontradas facilmente pelo restante da internet(como quase tudo), mas quem sabe aqui não seja um caminho de referência fácil? </p>
+<h4>Gostou? Tá com dúvida?</h4>
+<p>Chama no comentário aqui embaixo! (Ou reage feliz com amorzinho! &lt;3)</p>
+	<div id="disqus_thread"></div>
+		<script type="text/javascript">
+			var disqus_shortname = 'lucasebs';
+			(function() {
+	 			var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+	 			dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+	 			(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+	 		})();
+		</script>
+	<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+</div>
+		</div>
+	</body>
+</html>
