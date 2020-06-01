@@ -13,12 +13,13 @@ Aprender a executar um script/aplicação através de um bash(terminal, cmd, pow
 Geralmente, durante a vida acadêmica, poucas vezes isso nos é demonstrado e muito menos nos é dito todo o seu pontencial de uso. 
 
 E, em poucos exemplos, através desse modo de execução pode-se fazer coisas como:
-  - Agendar/Automatizar uma execução
-  - Realizar execuções condicionais
-  - Utilizar outros scripts para 'disparar' uma execução
-  - E por aí vai... 
 
-Cabe você descobrir pra que precisa e como aplicar.
+- Agendar/Automatizar uma execução
+- Realizar execuções condicionais
+- Utilizar outros scripts para 'disparar' uma execução
+- E por aí vai... 
+
+Cabe a você descobrir pra que precisa e como aplicar.
 
 Vamos lá, vou lhe mostrar utilizando como exemplo o código que geramos no post sobre como [Transformar json em arquivo CSV com Python](https://lucasebs.github.io/posts/2020/05/json-to-csv-python/) (se não leu, se ligue!):
 
@@ -42,7 +43,7 @@ Vamos chamá-lo de `script_feliz_transforma_json_em_csv.py`!
 
 ------------------------------
 
-## Está começando a desenvolve a pouco tempo?
+## Está começando a desenvolver a pouco tempo?
 
 > ##### Nota!
 > Caso esteja apenas buscando como fazer, segue que mais embaixo já tem mostrando como. 
@@ -62,7 +63,7 @@ Até então tudo ok! Mas qual seria o problema disso?
 
 E se você pudesse, ainda na execução, 'informar' ao seu script o arquivo a ser tranformado, além do nome do arquivo csv gerado?  
 
-Seria bem mais rápido que ter que mudar dentro do script, né?
+Seria bem mais rápido do que ter que mudar dentro do script, né?
 
 Pois bem, isso seria passar os nome dos arquivos como argumentos para seu script e seria mais ou menos assim:
 
@@ -74,7 +75,7 @@ Agora segue, que vou ensinar como fazer isso ligeirinho!
 
 ------------------------------
 
-## Como fazer isso?
+## Como fazer isso e tal?
 
 Utilizaremos apenas uma biblioteca python, `sys`.
 
@@ -167,9 +168,9 @@ $ python script_feliz_transforma_json_em_csv.py file_entrada.json file_saida.csv
 E é só isso mesmo, de verdade! 
 
 > ##### Nota! 
-> Maioria das demais linguagens de programação fazem uso desta mesma funcionalidade. Basta também pesquisar como fazer e ser feliz.
+> Maioria das linguagens de programação fazem uso desta mesma funcionalidade. Basta também pesquisar como fazer e ser feliz.
 
-Pronto, agora e explorar as formas de como utilizar da maneira que for mais funcional para as suas necessidades! 
+Pronto, agora é explorar as formas de como utilizar da maneira que for mais funcional para as suas necessidades! 
 
 Xero no coração!
 
@@ -177,7 +178,7 @@ Xero no coração!
 
 ### Aviso
 
-Essa página não nasceu pra ser "a luz, a verdade e a vida", onde tudo é diferenciado, muitas coisas poderão ser encontradas facilmente pelo restante da internet(como quase tudo), mas quem sabe aqui não seja um caminho de referência fácil? 
+Essa página não nasceu pra ser "a luz, a verdade e a vida", onde tudo é diferenciado, muitas coisas poderão ser encontradas facilmente pelo restante da internet (como quase tudo), mas quem sabe aqui não seja um caminho de referência fácil? 
 
 
 #### Gostou? Tá com dúvida?
