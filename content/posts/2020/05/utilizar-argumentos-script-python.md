@@ -10,7 +10,7 @@ Prosseguindo com as dicas em Python, esse post vem responder ao questionamento: 
 
 Aprender a executar um script/aplicação através de um bash(terminal, cmd, powershell), utilizando argumentos como entrada é uma das coisas mais funcionais a serem aprendidas na vida de quem desenvolve.
 
-Geralmente, durante a vida acadêmica, poucas vezes isso nos é demonstrado e muito menos nos é dito todo o seu pontencial de uso. 
+Geralmente, durante a vida acadêmica, poucas vezes isso nos é demonstrado e muito menos nos é dito todo o seu potencial de uso. 
 
 E, em poucos exemplos, através desse modo de execução pode-se fazer coisas como:
 
